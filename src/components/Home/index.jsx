@@ -24,7 +24,7 @@ const Home = () => {
                 name="cName"
                 type="text"
                 value={searchString}
-                onChange={(e) => setSearchString(e.target.value)}
+                onChange={(e) => setSearchString(e.target.value.toLowerCase())}
                 placeholder="Cat Name..."
               />
 
@@ -56,6 +56,7 @@ const Home = () => {
                           child_frd: item.child_friendly,
                           Energy: item.energy_level,
                           intell: item.intelligence,
+                          temper: item.temperament,
                         },
                       }}
                       key={i}

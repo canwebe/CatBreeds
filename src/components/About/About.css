@@ -1,1 +1,54 @@
+.Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px;
+}
 
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 89%;
+  margin-bottom: 25px;
+}
+
+.container h2 {
+  padding: 3px;
+  margin: 2px;
+}
+
+.container img {
+  width: 1000px;
+  height: 800px;
+  margin: 5px;
+  box-shadow: 0px 0px 3px 1px black;
+}
+
+.para {
+  padding: 3px;
+  margin: 5px;
+  letter-spacing: 0.8px;
+  line-height: 19px;
+  font-size: 16px;
+  color: rgb(32, 32, 32);
+}
+
+.para b {
+  font-size: 17px;
+  color: black;
+}
+
+.desc b::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 110px;
+  margin-bottom: 8px;
+  background-color: black;
+  display: flex;
+  margin-top: 3px;
+  flex-direction: row;
+}

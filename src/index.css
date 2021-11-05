@@ -9,9 +9,18 @@ nav {
   background-color: #000;
 }
 
+.nav h2 {
+  color: rgba(224, 233, 141, 0.856);
+  font-weight: 600;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   background-color: rgb(226, 226, 226);
-  font-family: cursive;
+  font-family: monospace;
 }
 .wrapper {
   width: 90%;

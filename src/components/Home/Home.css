@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 29px;
 }
 
 .searchWrapper {
@@ -24,6 +25,7 @@ input {
   width: 300px;
   height: 47px;
   padding: 8px;
+  font-size: 23px;
   margin: -35px;
   border-radius: 15px;
   border: none;
@@ -115,5 +117,5 @@ input:focus {
   bottom: 7px;
   right: 7px;
   left: 7px;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
