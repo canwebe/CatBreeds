@@ -1,43 +1,43 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./Home.css";
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import './Home.css'
 
 const Home = () => {
-  const [image, setImage] = useState([]);
-  const [searchString, setSearchString] = useState("");
+  const [image, setImage] = useState([])
+  const [searchString, setSearchString] = useState('')
   useEffect(() => {
     fetch(
       `https://api.thecatapi.com/v1/breeds?api_key=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
-      .then((data) => setImage(data));
-  }, []);
+      .then((data) => setImage(data))
+  }, [])
 
   return (
-    <div className="home">
-      <div className="searchWrapper">
-        <div className="search wrapper">
-          <div className="input-link">
-            <h2>Enter the name of Breed</h2>
-            <div className="searchBar">
+    <div className='home'>
+      <div className='searchWrapper'>
+        <div className='search wrapper'>
+          <div className='input-link'>
+            <h2>Search the name of Breed</h2>
+            <div className='searchBar'>
               <input
-                name="cName"
-                type="text"
+                name='cName'
+                type='text'
                 value={searchString}
                 onChange={(e) => setSearchString(e.target.value.toLowerCase())}
-                placeholder="Cat Name..."
+                placeholder='Cat Name...'
               />
 
-              <i className="fa fa-search"></i>
+              <i className='fa fa-search'></i>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="image">
-        <h2 className="cats">PussyCat</h2>
-        <div className="wrapper">
-          <div className="imgWrapper">
+      <div className='image'>
+        <h2 className='cats'>Cat's Lists</h2>
+        <div className='wrapper'>
+          <div className='imgWrapper'>
             {image
               .filter((item) => item.name.toLowerCase().includes(searchString))
               .map(
@@ -45,7 +45,7 @@ const Home = () => {
                   item.image && (
                     <Link
                       to={{
-                        pathname: "/info",
+                        pathname: '/info',
                         state: {
                           name: item.name,
                           desc: item.description,
@@ -61,9 +61,9 @@ const Home = () => {
                       }}
                       key={i}
                     >
-                      <div className="catCard">
-                        <img src={item.image.url} alt="catimage" />
-                        <div className="catName">{item.name}</div>
+                      <div className='catCard'>
+                        <img src={item.image.url} alt='catimage' />
+                        <div className='catName'>{item.name}</div>
                       </div>
                     </Link>
                   )
@@ -72,6 +72,6 @@ const Home = () => {
         </div>
       </div>
     </div>
-  );
-};
-export default Home;
+  )
+}
+export default Home
