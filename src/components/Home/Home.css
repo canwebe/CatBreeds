@@ -2,12 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 29px;
+  /* padding: 29px; */
+  height: 330px;
 }
 
 .searchWrapper {
   background-color: rgb(194, 164, 167);
-  height: 330px;
+  margin-top: 50px;
+  border-bottom: 11px solid #9b7477;
 }
 
 .input-link {
@@ -16,17 +18,19 @@
 
 .input-link h2 {
   color: rgb(34, 34, 34);
-  font-size: 50px;
-  margin: 35px;
-  padding: 6px;
+  font-size: 32px;
+  word-spacing: 2px;
+  /* margin: 35px; */
+  margin: -25px auto 20px;
 }
 
 input {
   width: 300px;
-  height: 47px;
-  padding: 8px;
+  /* height: 47px; */
+  padding: 10px;
   font-size: 23px;
-  margin: -35px;
+  /* margin: -35px; */
+  margin-right: -35px;
   border-radius: 15px;
   border: none;
   background-color: rgb(194, 192, 190);
@@ -36,7 +40,7 @@ input {
 input::placeholder {
   font-size: 20px;
   text-align: center;
-  color: #3c3c3f;
+  /* color: #3c3c3f; */
 }
 
 input:focus {
@@ -59,23 +63,20 @@ input:focus {
 }
 
 .cats {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  text-align: center;
   color: rgb(60, 71, 46);
-  padding: 5px;
-  margin: 10px;
-  letter-spacing: 0.8px;
+  font-size: 25px;
+  margin-top: 20px;
+  /* letter-spacing: 0.8px; */
 }
 
 .cats::after {
-  content: "";
+  content: '';
   display: block;
   width: 117px;
   height: 3px;
-  margin: 9px auto;
-  background-color: rgb(46, 51, 39);
+  margin: 9px auto 20px;
+  background-color: rgb(245, 88, 25);
 }
 
 .imgWrapper {
@@ -83,6 +84,7 @@ input:focus {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .catCard {
@@ -118,4 +120,9 @@ input:focus {
   right: 7px;
   left: 7px;
   letter-spacing: 1.5px;
+}
+
+img.sideImg {
+  position: fixed;
+  top: 0;
 }
