@@ -1,50 +1,87 @@
-import React from "react";
-import "./About.css";
+import React from 'react'
+import './About.css'
 
 const About = ({
   history: {
     location: { state },
   },
 }) => (
-  <div className="wrapper">
-    <div className="about">
-      {state && (
-        <div className="container Wrapper">
-          <img src={state.url} alt="fullimg" className="Wrapper" />
-          <div className="content">
-            <h2>{state.name}</h2>
-            <p className="para">
-              <b>Origin:</b>
-              {state.org}
-              {"   "}
-              <b>Life_span:</b>
-              {state.life}
-              {"   "}
-              <b>Dog_friendly:</b>
-              {state.friendly}
-              {"   "}
-              <b>Child_friendly:</b>
-              {state.child_frd}
-              {"   "}
-              <b>Energy_Level:</b>
-              {state.Energy}
-              {"   "}
-              <b>Intelligence:</b>
-              {state.intell}
-              {"   "}
-              <b>Temperament:</b>
-              {"  "}
-              {state.temper}
-            </p>
-            <p className="desc para">
-              <b>Description:</b>
-              {state.desc}
-            </p>
-          </div>
-        </div>
-      )}
-    </div>
-  </div>
-);
+  <div className='about wrapper'>
+    {state && (
+      <>
+        <div className='container'>
+          <img src={state.url} alt='fullimg' />
 
-export default About;
+          {/* <h2>{state.name}</h2> */}
+          <div className='content para'>
+            <div className='catNameH2'>
+              <h2>{state.name}</h2>
+            </div>
+            <div>
+              <p>
+                <b>Origin:</b>
+                {state.org}
+              </p>
+            </div>
+            <div className='gap20'>
+              <p>
+                <b>Life_span:</b>
+                {state.life}
+              </p>
+            </div>
+            <div>
+              <p>
+                <b>Dog_friendly:</b>
+                {state.friendly}
+              </p>
+              <div className='progress'>
+                <div className='progress-done'></div>
+              </div>
+            </div>
+            <div>
+              <p>
+                <b>Child_friendly:</b>
+                {state.child_frd}
+              </p>
+              <div className='progress'>
+                <div className='progress-done'></div>
+              </div>
+            </div>
+            <div>
+              <p>
+                <b>Energy_Level:</b>
+                {state.Energy}
+              </p>
+              <div className='progress'>
+                <div className='progress-done'></div>
+              </div>
+            </div>
+            <div className='gap20'>
+              <p>
+                <b>Intelligence:</b>
+                {state.intell}
+              </p>
+              <div className='progress'>
+                <div className='progress-done'></div>
+              </div>
+            </div>
+            <div>
+              <p>
+                <b>Temperament:</b>
+                <br />
+                {state.temper}
+              </p>
+            </div>
+          </div>
+
+          <p className='desc para'>
+            <b>Description:</b>
+            {state.desc}
+          </p>
+        </div>
+      </>
+    )}
+  </div>
+)
+
+export default About
