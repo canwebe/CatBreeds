@@ -7,9 +7,9 @@
 }
 
 .searchWrapper {
-  background-color: rgb(194, 164, 167);
+  background-color: rgb(134 154 224);
   margin-top: 50px;
-  border-bottom: 11px solid #9b7477;
+  border-bottom: 11px solid #727272;
 }
 
 .input-link {
@@ -33,7 +33,7 @@ input {
   margin-right: -35px;
   border-radius: 15px;
   border: none;
-  background-color: rgb(194, 192, 190);
+  background-color: rgba(255, 255, 255, 0.74);
   box-shadow: 0px 0px 4px 1px #555557;
 }
 
@@ -125,4 +125,11 @@ input:focus {
 img.sideImg {
   position: fixed;
   top: 0;
+}
+
+.loadingImg {
+  font-size: 20px;
+  color: black;
+  font-weight: 300;
+  text-align: center;
 }
