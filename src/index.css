@@ -4,27 +4,32 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 nav {
   /* height: 40px; */
   padding: 9px;
-  background-color: #000;
+  background-color: rgb(15 15 33);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9;
   right: 0;
-  box-shadow: 0 4px 5px #0c0406b0;
+  box-shadow: 0 3px 5px #0c0406b0;
 }
 
 .nav a {
-  color: rgba(224, 233, 141, 0.856);
+  color: rgb(212 196 43 / 86%);
   font-weight: 600;
   font-size: 35px;
   text-align: center;
 }
 
 body {
-  background-color: rgb(226, 226, 226);
+  /* background-color: rgb(226, 226, 226); */
+  background-color: antiquewhite;
   font-family: monospace;
 }
 .wrapper {

@@ -1,9 +1,9 @@
 .about .container {
   display: flex;
   justify-content: space-between;
-
   flex-wrap: wrap;
   width: 90%;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -14,8 +14,28 @@
 .catNameH2 h2 {
   font-size: 40px;
   color: black;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
+
+.catNameH2 {
+  width: fit-content;
+  position: relative;
+}
+.catNameH2 h2::after {
+  content: '';
+  display: block;
+  height: 4px;
+  /* width: 130px; */
+  position: absolute;
+  top: 37px;
+  left: 6px;
+  right: 7px;
+  border-radius: 400px;
+  /* margin-bottom: 8px; */
+  background-color: rgb(174 174 174);
+  /* margin-top: 15px; */
+}
+
 .content {
   display: flex;
   justify-content: center;
@@ -23,18 +43,27 @@
   flex-direction: column;
   width: 30%;
   margin-bottom: 25px;
+  margin-left: 35px;
 }
 
-.container h2 {
+/* .container h2 {
   padding: 3px;
   margin: 2px;
-}
+} */
 
 .container img {
-  width: 65%;
+  width: 63%;
   /* height: 800px; */
+  height: 470px;
+  padding: 19px;
   margin: 5px;
   box-shadow: 0px 0px 3px 1px black;
+  background-color: aliceblue;
+  transition: all 0.3s ease-in-out;
+}
+
+.container img:hover {
+  box-shadow: 1px 1px 6px 3px rgba(48, 48, 48, 0.74);
 }
 
 .para {
@@ -53,14 +82,17 @@
 
 .desc {
   width: 100%;
-  background-color: aquamarine;
+  margin-top: 25px;
 }
 
+.desc b {
+  font-size: 20px;
+}
 .desc b::after {
   content: '';
   display: block;
   height: 2px;
-  width: 110px;
+  width: 130px;
   margin-bottom: 8px;
   background-color: black;
   display: flex;
@@ -84,9 +116,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: indigo;
+  /* background-color: indigo; */
   height: 100%;
-  width: 80%;
+}
+
+.para div:nth-child(4) div.progress-done {
+  background-color: #aca0f9;
+}
+.para div:nth-child(5) div.progress-done {
+  background-color: #ff5994;
+}
+.para div:nth-child(6) div.progress-done {
+  background-color: #eb2d2d;
+}
+.para div:nth-child(7) div.progress-done {
+  background-color: #00a9e2;
 }
 
 .gap20 {

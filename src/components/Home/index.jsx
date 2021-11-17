@@ -42,33 +42,34 @@ const Home = () => {
               .filter((item) =>
                 item.name.toLowerCase().includes(searchString.trim())
               )
-              .map(
-                (item, i) =>
-                  item.image && (
-                    <Link
-                      to={{
-                        pathname: '/info',
-                        state: {
-                          name: item.name,
-                          desc: item.description,
-                          url: item.image.url,
-                          org: item.origin,
-                          life: item.life_span,
-                          friendly: item.dog_friendly,
-                          child_frd: item.child_friendly,
-                          Energy: item.energy_level,
-                          intell: item.intelligence,
-                          temper: item.temperament,
-                        },
-                      }}
-                      key={i}
-                    >
-                      <div className='catCard'>
-                        <img src={item.image.url} alt='catimage' />
-                        <div className='catName'>{item.name}</div>
-                      </div>
-                    </Link>
-                  )
+              .map((item, i) =>
+                item.image ? (
+                  <Link
+                    to={{
+                      pathname: '/info',
+                      state: {
+                        name: item.name,
+                        desc: item.description,
+                        url: item.image.url,
+                        org: item.origin,
+                        life: item.life_span,
+                        friendly: item.dog_friendly,
+                        child_frd: item.child_friendly,
+                        Energy: item.energy_level,
+                        intell: item.intelligence,
+                        temper: item.temperament,
+                      },
+                    }}
+                    key={i}
+                  >
+                    <div className='catCard'>
+                      <img src={item.image.url} alt='catimage' />
+                      <div className='catName'>{item.name}</div>
+                    </div>
+                  </Link>
+                ) : (
+                  <p className='loadingImg'>Loading...</p>
+                )
               )}
           </div>
         </div>
