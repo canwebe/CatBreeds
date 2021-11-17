@@ -1,17 +1,27 @@
-.Wrapper {
+.about .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+
   flex-wrap: wrap;
-  margin: 40px;
+  width: 90%;
+  margin: 0 auto;
 }
 
+.about {
+  padding: 100px 0;
+}
+
+.catNameH2 h2 {
+  font-size: 40px;
+  color: black;
+  margin-bottom: 30px;
+}
 .content {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
-  width: 89%;
+  width: 30%;
   margin-bottom: 25px;
 }
 
@@ -21,17 +31,17 @@
 }
 
 .container img {
-  width: 1000px;
-  height: 800px;
+  width: 65%;
+  /* height: 800px; */
   margin: 5px;
   box-shadow: 0px 0px 3px 1px black;
 }
 
 .para {
-  padding: 3px;
-  margin: 5px;
+  /* padding: 3px;
+  margin: 5px; */
   letter-spacing: 0.8px;
-  line-height: 19px;
+  line-height: 23px;
   font-size: 16px;
   color: rgb(32, 32, 32);
 }
@@ -41,8 +51,13 @@
   color: black;
 }
 
+.desc {
+  width: 100%;
+  background-color: aquamarine;
+}
+
 .desc b::after {
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   width: 110px;
@@ -51,4 +66,29 @@
   display: flex;
   margin-top: 3px;
   flex-direction: row;
+}
+
+.progress {
+  position: relative;
+  background-color: #d8d8d8;
+  border-radius: 20px;
+  margin: 5px 0;
+  height: 13px;
+  overflow-x: hidden;
+  width: 80%;
+}
+
+.progress-done {
+  border-radius: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: indigo;
+  height: 100%;
+  width: 80%;
+}
+
+.gap20 {
+  margin-bottom: 20px;
 }

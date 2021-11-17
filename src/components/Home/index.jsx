@@ -39,7 +39,9 @@ const Home = () => {
         <div className='wrapper'>
           <div className='imgWrapper'>
             {image
-              .filter((item) => item.name.toLowerCase().includes(searchString))
+              .filter((item) =>
+                item.name.toLowerCase().includes(searchString.trim())
+              )
               .map(
                 (item, i) =>
                   item.image && (
