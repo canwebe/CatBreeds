@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
 
-const Home = () => {
+const Home = ({ pageNo, setPageNo }) => {
   const [image, setImage] = useState([])
   const [dataFull, setDataFull] = useState([])
   const [searchString, setSearchString] = useState('')
-  const [pageNo, setPageNo] = useState(0)
+  // const [pageNo, setPageNo] = useState(0)
 
   const handleNext = () => {
     setPageNo((prev) => prev + 1)
@@ -106,7 +106,7 @@ const Home = () => {
               <span>
                 <p>{pageNo + 1}</p>
               </span>
-              <button disabled={pageNo === 6} onClick={handleNext}>
+              <button disabled={pageNo === 5} onClick={handleNext}>
                 Next
               </button>
             </div>
