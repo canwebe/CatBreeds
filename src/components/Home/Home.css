@@ -147,7 +147,9 @@ img.sideImg {
   width: 100%;
 }
 
-/* Media Queries */
+/* ===================== 
+     Media Queries 
+===================== */
 
 @media only screen and (max-width: 1230px) {
   .catCard img {
@@ -247,6 +249,9 @@ img.sideImg {
     height: 2.3px;
     margin: 4px auto 20px;
     border-radius: 500px;
+  }
+  .searchBar input:focus + i {
+    display: none;
   }
 }
 
