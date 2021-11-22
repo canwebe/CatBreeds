@@ -26,12 +26,14 @@ const About = ({
                 <div className='topDesc'>
                   <div>
                     <p>
-                      <b>Origin:</b> {state.org}
+                      <b>Origin:</b> <br className='hidden' />
+                      {state.org}
                     </p>
                   </div>
-                  <div className='gap20'>
+                  <div>
                     <p>
-                      <b>Life_span:</b> {state.life}
+                      <b>Life_span:</b> <br className='hidden' />
+                      {state.life}
                     </p>
                   </div>
                 </div>
@@ -98,7 +100,7 @@ const About = ({
                     <p>
                       <b>Temperament:</b>
                       <br />
-                      {state.temper}
+                      <span className='temp'>{state.temper}</span>
                     </p>
                   </div>
                 </div>

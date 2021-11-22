@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 nav {
@@ -26,7 +27,18 @@ nav {
   font-size: 35px;
   text-align: center;
 }
-
+.back {
+  color: rgb(214, 214, 214);
+  position: absolute;
+  text-transform: uppercase;
+  left: 0;
+  font-size: 18px;
+  font-weight: bolder;
+  display: none;
+}
+.back.visible {
+  display: block;
+}
 body {
   /* background-color: rgb(226, 226, 226); */
   background-color: antiquewhite;
@@ -57,4 +69,5 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
