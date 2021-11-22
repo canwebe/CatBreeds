@@ -4,14 +4,34 @@ import './Home.css'
 
 const Home = () => {
   const [image, setImage] = useState([])
+  const [dataFull, setDataFull] = useState([])
   const [searchString, setSearchString] = useState('')
-  useEffect(() => {
+  const [pageNo, setPageNo] = useState(0)
+
+  const handleNext = () => {
+    setPageNo((prev) => prev + 1)
+    window.scrollTo(0, 0)
+  }
+  const handlePrev = () => {
+    setPageNo((prev) => prev - 1)
+    window.scrollTo(0, 0)
+  }
+
+  const handleSearch = () => {
     fetch(
       `https://api.thecatapi.com/v1/breeds?api_key=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
+      .then((data) => setDataFull(data))
+  }
+
+  useEffect(() => {
+    fetch(
+      `https://api.thecatapi.com/v1/breeds?limit=12&page=${pageNo}&order=Asc&api_key=${process.env.REACT_APP_API_KEY}`
+    )
+      .then((res) => res.json())
       .then((data) => setImage(data))
-  }, [])
+  }, [pageNo])
 
   return (
     <div className='home'>
@@ -25,6 +45,7 @@ const Home = () => {
                 type='text'
                 value={searchString}
                 onChange={(e) => setSearchString(e.target.value.toLowerCase())}
+                onFocus={handleSearch}
                 placeholder='Eg: Abyssinian'
               />
 
@@ -39,13 +60,13 @@ const Home = () => {
         <div className='wrapper'>
           <div className='imgWrapper'>
             {image.length ? (
-              image
+              (searchString.length ? dataFull : image)
                 .filter((item) =>
                   item.name.toLowerCase().includes(searchString.trim())
                 )
                 .map(
                   (item, i) =>
-                    item.image && (
+                    item.image?.url && (
                       <Link
                         to={{
                           pathname: '/info',
@@ -75,6 +96,21 @@ const Home = () => {
               <p className='loadingImg'> Loading...</p>
             )}
           </div>
+          {image.length && (
+            <div
+              className={`pagination ${searchString.length && 'pageHidden'}`}
+            >
+              <button disabled={pageNo === 0} onClick={handlePrev}>
+                Prev
+              </button>
+              <span>
+                <p>{pageNo + 1}</p>
+              </span>
+              <button disabled={pageNo === 6} onClick={handleNext}>
+                Next
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

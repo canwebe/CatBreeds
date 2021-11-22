@@ -35,6 +35,7 @@ nav {
   font-size: 18px;
   font-weight: bolder;
   display: none;
+  cursor: pointer;
 }
 .back.visible {
   display: block;
