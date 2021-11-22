@@ -3,13 +3,13 @@
   align-items: center;
   justify-content: center;
   /* padding: 29px; */
-  height: 330px;
+  height: 250px;
 }
 
 .searchWrapper {
   background-color: rgb(134 154 224);
   margin-top: 50px;
-  border-bottom: 11px solid #727272;
+  /* border-bottom: 11px solid #727272; */
 }
 
 .input-link {
@@ -18,28 +18,30 @@
 
 .input-link h2 {
   color: rgb(34, 34, 34);
-  font-size: 32px;
+  font-size: 28px;
   word-spacing: 2px;
   /* margin: 35px; */
+  opacity: 0.7;
   margin: -25px auto 20px;
 }
 
 input {
-  width: 300px;
+  width: 400px;
   /* height: 47px; */
-  padding: 10px;
+  padding: 9px;
   font-size: 23px;
   /* margin: -35px; */
   margin-right: -35px;
-  border-radius: 15px;
+  border-radius: 55px;
   border: none;
   background-color: rgba(255, 255, 255, 0.74);
   box-shadow: 0px 0px 4px 1px #555557;
 }
 
 input::placeholder {
-  font-size: 20px;
+  font-size: 17px;
   text-align: center;
+  opacity: 0.7;
   /* color: #3c3c3f; */
 }
 
@@ -87,6 +89,10 @@ input:focus {
   position: relative;
 }
 
+.imgWrapper a {
+  flex-basis: 30%;
+}
+
 .catCard {
   margin: 15px;
   transition: all 0.3s ease-in-out;
@@ -98,7 +104,7 @@ input:focus {
   position: relative;
 }
 .catCard img {
-  width: 320px;
+  /* width: 320px;*/
   height: 210px;
 }
 
@@ -128,8 +134,55 @@ img.sideImg {
 }
 
 .loadingImg {
-  font-size: 20px;
+  font-size: 33px;
   color: black;
-  font-weight: 300;
+  opacity: 0.5;
+  margin-top: 80px;
+  margin-left: 20px;
   text-align: center;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1230px) {
+  .catCard img {
+    /* width: 250px; */
+    height: 167px;
+  }
+}
+@media only screen and (max-width: 920px) {
+  .imgWrapper a {
+    flex-basis: 50%;
+  }
+  .catCard img {
+    /* width: 320px; */
+    height: 210px;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .catCard img {
+    /* width: 320px; */
+    height: 160px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .imgWrapper a {
+    flex-basis: 100%;
+  }
+  .catCard img {
+    /* width: 320px; */
+    height: 310px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .image .wrapper {
+    width: 80%;
+  }
+  .catCard img {
+    /* width: 320px; */
+    height: 210px;
+  }
 }
