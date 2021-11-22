@@ -147,7 +147,9 @@ img.sideImg {
   width: 100%;
 }
 
-/* Media Queries */
+/* ===================== 
+     Media Queries 
+===================== */
 
 @media only screen and (max-width: 1230px) {
   .catCard img {

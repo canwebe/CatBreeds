@@ -29,7 +29,7 @@
   /* width: 130px; */
   position: absolute;
   /* top: 37px; */
-  bottom: 26px;
+  bottom: -12px;
   left: 6px;
   right: 7px;
   border-radius: 400px;
@@ -37,15 +37,17 @@
   background-color: rgb(174 174 174);
   /* margin-top: 15px; */
 }
-
+.middleInfo {
+  width: 30%;
+  /* margin-left: 35px; */
+}
 .content {
   display: flex;
   justify-content: center;
   /* align-items: center; */
   flex-direction: column;
-  width: 30%;
+  /* width: 30%; */
   margin-bottom: 25px;
-  margin-left: 35px;
 }
 
 /* .container h2 {
@@ -122,19 +124,73 @@
   height: 100%;
 }
 
-.para div:nth-child(4) div.progress-done {
+.middleDesc .meterBox:nth-child(1) div.progress-done {
   background-color: #aca0f9;
 }
-.para div:nth-child(5) div.progress-done {
+.middleDesc .meterBox:nth-child(2) div.progress-done {
   background-color: #ff5994;
 }
-.para div:nth-child(6) div.progress-done {
+.middleDesc .meterBox:nth-child(3) div.progress-done {
   background-color: #eb2d2d;
 }
-.para div:nth-child(7) div.progress-done {
+.middleDesc .meterBox:nth-child(4) div.progress-done {
   background-color: #00a9e2;
 }
 
-.gap20 {
+/* .gap20 {
   margin-bottom: 20px;
+} */
+
+.middleDesc {
+  margin: 20px 0;
+}
+
+/* ===================== 
+     Media Queries 
+===================== */
+
+@media only screen and (max-width: 920px) {
+  .container img,
+  .middleInfo {
+    width: 100%;
+  }
+  .about .container {
+    margin: inherit;
+  }
+  /* .content {
+    margin-top: 20px;
+  } */
+  .catNameH2 {
+    width: 100%;
+  }
+  .catNameH2 h2 {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .catNameH2 h2::after {
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .middleDesc {
+    margin: 0;
+  }
+
+  .bottomDesc {
+    margin-top: -113px;
+  }
+
+  .topDesc,
+  .bottomDesc,
+  .middleDesc {
+    flex-basis: 45%;
+  }
 }
