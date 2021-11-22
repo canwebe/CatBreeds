@@ -89,6 +89,10 @@ input:focus {
   position: relative;
 }
 
+.imgWrapper a {
+  flex-basis: 30%;
+}
+
 .catCard {
   margin: 15px;
   transition: all 0.3s ease-in-out;
@@ -100,7 +104,7 @@ input:focus {
   position: relative;
 }
 .catCard img {
-  width: 320px;
+  /* width: 320px;*/
   height: 210px;
 }
 
@@ -136,4 +140,49 @@ img.sideImg {
   margin-top: 80px;
   margin-left: 20px;
   text-align: center;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1230px) {
+  .catCard img {
+    /* width: 250px; */
+    height: 167px;
+  }
+}
+@media only screen and (max-width: 920px) {
+  .imgWrapper a {
+    flex-basis: 50%;
+  }
+  .catCard img {
+    /* width: 320px; */
+    height: 210px;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .catCard img {
+    /* width: 320px; */
+    height: 160px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .imgWrapper a {
+    flex-basis: 100%;
+  }
+  .catCard img {
+    /* width: 320px; */
+    height: 310px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .image .wrapper {
+    width: 80%;
+  }
+  .catCard img {
+    /* width: 320px; */
+    height: 210px;
+  }
 }
