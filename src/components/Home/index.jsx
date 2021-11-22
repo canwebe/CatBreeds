@@ -25,7 +25,7 @@ const Home = () => {
                 type='text'
                 value={searchString}
                 onChange={(e) => setSearchString(e.target.value.toLowerCase())}
-                placeholder='Cat Name...'
+                placeholder='Eg: Abyssinian'
               />
 
               <i className='fa fa-search'></i>
@@ -38,39 +38,42 @@ const Home = () => {
         <h2 className='cats'>Cat's Lists</h2>
         <div className='wrapper'>
           <div className='imgWrapper'>
-            {image
-              .filter((item) =>
-                item.name.toLowerCase().includes(searchString.trim())
-              )
-              .map((item, i) =>
-                item.image ? (
-                  <Link
-                    to={{
-                      pathname: '/info',
-                      state: {
-                        name: item.name,
-                        desc: item.description,
-                        url: item.image.url,
-                        org: item.origin,
-                        life: item.life_span,
-                        friendly: item.dog_friendly,
-                        child_frd: item.child_friendly,
-                        Energy: item.energy_level,
-                        intell: item.intelligence,
-                        temper: item.temperament,
-                      },
-                    }}
-                    key={i}
-                  >
-                    <div className='catCard'>
-                      <img src={item.image.url} alt='catimage' />
-                      <div className='catName'>{item.name}</div>
-                    </div>
-                  </Link>
-                ) : (
-                  <p className='loadingImg'>Loading...</p>
+            {image.length ? (
+              image
+                .filter((item) =>
+                  item.name.toLowerCase().includes(searchString.trim())
                 )
-              )}
+                .map(
+                  (item, i) =>
+                    item.image && (
+                      <Link
+                        to={{
+                          pathname: '/info',
+                          state: {
+                            name: item.name,
+                            desc: item.description,
+                            url: item.image.url,
+                            org: item.origin,
+                            life: item.life_span,
+                            friendly: item.dog_friendly,
+                            child_frd: item.child_friendly,
+                            Energy: item.energy_level,
+                            intell: item.intelligence,
+                            temper: item.temperament,
+                          },
+                        }}
+                        key={i}
+                      >
+                        <div className='catCard'>
+                          <img src={item.image.url} alt='catimage' />
+                          <div className='catName'>{item.name}</div>
+                        </div>
+                      </Link>
+                    )
+                )
+            ) : (
+              <p className='loadingImg'> Loading...</p>
+            )}
           </div>
         </div>
       </div>

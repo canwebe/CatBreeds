@@ -15,6 +15,7 @@
   font-size: 40px;
   color: black;
   margin-bottom: 40px;
+  line-height: 36px;
 }
 
 .catNameH2 {
@@ -27,7 +28,8 @@
   height: 4px;
   /* width: 130px; */
   position: absolute;
-  top: 37px;
+  /* top: 37px; */
+  bottom: 26px;
   left: 6px;
   right: 7px;
   border-radius: 400px;
