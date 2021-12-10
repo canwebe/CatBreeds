@@ -1,28 +1,24 @@
-import React from 'react'
-import cat1 from '../../img/twocat.png'
-import cat2 from '../../img/threecatwow.png'
-import { withRouter } from 'react-router-dom'
+import React from "react";
+import { withRouter } from "react-router-dom";
 const Nav = ({ history }) => {
-  console.log(history)
+  console.log(history);
   return (
     <nav>
-      <div className='wrapper'>
-        <div className='nav'>
+      <div className="wrapper">
+        <div className="nav">
           <div
             onClick={() => history.goBack()}
             className={`back ${
-              history.location.pathname === '/info' && 'visible'
+              history.location.pathname === "/info" && "visible"
             }`}
           >
-            back
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
           </div>
-          <img className='navCat' src={cat2} alt='' />
-          <a href='/'>CATManual</a>
-          <img className='navCat' src={cat1} alt='' />
+          <a href="/">CATManual</a>
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default withRouter(Nav)
+export default withRouter(Nav);

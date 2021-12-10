@@ -28,7 +28,11 @@ nav {
   text-align: center;
 }
 .back {
-  color: rgb(214, 214, 214);
+  padding: 2px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: #386a59;
+  color: rgb(165, 165, 170);
   position: absolute;
   text-transform: uppercase;
   left: 0;
@@ -40,6 +44,14 @@ nav {
 .back.visible {
   display: block;
 }
+.back .fa-arrow-left {
+  margin-left: 1px;
+}
+
+.back:hover {
+  background-color: #6c978a;
+}
+
 body {
   /* background-color: rgb(226, 226, 226); */
   background-color: antiquewhite;
