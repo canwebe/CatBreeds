@@ -107,17 +107,18 @@
 .wikepedia-link {
   margin-top: 10px;
   padding: 5px;
-  background-color: rgb(59, 77, 117);
+  background-color: #1a85ab;
   border-radius: 5px;
+  box-shadow: 0px 0px 3px 0px black;
 }
 
 .wikepedia-link b {
-  color: rgb(15, 15, 15);
+  color: #3a2222;
   font-size: 15px;
 }
 
 .wikepedia-link:hover {
-  background-color: rgb(70, 91, 138);
+  background-color: #2d6377;
 }
 
 .progress {

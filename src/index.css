@@ -31,8 +31,8 @@ nav {
   padding: 3px;
   width: 26px;
   border-radius: 50%;
-  background-color: #257a5e;
-  color: rgb(165, 165, 170);
+  background-color: #117c5c;
+  color: rgb(208 208 221);
   position: absolute;
   text-transform: uppercase;
   left: 0;
@@ -49,7 +49,7 @@ nav {
 }
 
 .back:hover {
-  background-color: #6c978a;
+  background-color: #49947d;
 }
 
 body {

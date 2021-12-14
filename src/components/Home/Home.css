@@ -79,7 +79,7 @@ input:focus {
 }
 
 .cats::after {
-  content: '';
+  content: "";
   display: block;
   width: 117px;
   height: 3px;
@@ -157,8 +157,15 @@ img.sideImg {
 }
 
 .pagination button {
+  color: #333336;
+  background-color: burlywood;
   padding: 5px 14px;
+  font-weight: bolder;
   cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: rgb(219, 154, 70);
 }
 
 .pagination span {
