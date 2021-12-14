@@ -28,10 +28,10 @@ nav {
   text-align: center;
 }
 .back {
-  padding: 2px;
-  width: 24px;
+  padding: 3px;
+  width: 26px;
   border-radius: 50%;
-  background-color: #386a59;
+  background-color: #257a5e;
   color: rgb(165, 165, 170);
   position: absolute;
   text-transform: uppercase;
