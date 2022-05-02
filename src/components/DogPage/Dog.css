@@ -1,0 +1,58 @@
+.dog-header {
+  color: rgb(60, 71, 46);
+  font-size: 25px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.dog-header::after {
+  content: '';
+  display: block;
+  width: 117px;
+  height: 3px;
+  margin: 9px auto 22px;
+  background-color: rgb(245, 88, 25);
+}
+
+.dogImage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.dogImgWrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.dogCard {
+  padding: 7px;
+  margin: 16px;
+  transition: all 0.3s ease-in-out;
+  filter: grayscale(0.7);
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: rgb(9 30 66 / 25%) 0px 4px 8px -2px,
+    rgb(9 30 66 / 8%) 0px 0px 0px 1px;
+}
+
+.dogCard:hover {
+  filter: grayscale(0);
+  transform: scale(1.05);
+}
+
+.dogCard img {
+  margin-bottom: -4px;
+  width: 350px;
+  height: 240px;
+}
+
+.dogName {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(74 95 113);
+  color: white;
+  font-size: 18px;
+}

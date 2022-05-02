@@ -23,7 +23,7 @@
   position: relative;
 }
 .catNameH2 h2::after {
-  content: "";
+  content: '';
   display: block;
   height: 4px;
   /* width: 130px; */
@@ -93,7 +93,7 @@
   font-size: 20px;
 }
 .desc b::after {
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   width: 130px;
@@ -107,7 +107,7 @@
 .wikepedia-link {
   margin-top: 10px;
   padding: 5px;
-  background-color: rgb(59, 77, 117);
+  background-color: rgb(96 175 170);
   border-radius: 5px;
 }
 
@@ -117,7 +117,7 @@
 }
 
 .wikepedia-link:hover {
-  background-color: rgb(70, 91, 138);
+  background-color: rgb(76, 138, 134);
 }
 
 .progress {
