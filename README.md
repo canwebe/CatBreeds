@@ -1,3 +1,13 @@
+Cat Manual is an Interactive Web Application that allows users to Identify and decide before adopting pet cat breeds according to the trends and features of certain cat species and availability in the current market 
+
+Users can Reach this Web App simply by Going to https://catmanual.netlify.app/
+
+This Project is under progress and in future deployments users will have acces to multiple domestic pets manual's in a single application
+
+This Project is available as an Open Source Developers can Follow the below steps to run the application locally 
+
+This project is runs on thecatapi.com service and is maintained by @CanWeBe!. Contributions are wideley welcome.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
