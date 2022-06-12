@@ -31,7 +31,7 @@ const DogList = ({ countPage, setCountPage }) => {
 
   useEffect(() => {
     fetch(
-      `https:api.thedogapi.com/v1/breeds?limit=12&page=${countPage}&order=asc&api_key=${process.env.REACT_APP_API_KEY2}`
+      `https://api.thedogapi.com/v1/breeds?limit=12&page=${countPage}&order=asc&api_key=${process.env.REACT_APP_API_KEY2}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -39,8 +39,6 @@ const DogList = ({ countPage, setCountPage }) => {
         setDogImages(data)
       })
   }, [countPage])
-
-  //https:api.thecatapi.com/v1/breeds?limit=12&page=${pageNo}&order=Asc&api_key=${process.env.REACT_APP_API_KEY
 
   return (
     <div className='dogList'>
