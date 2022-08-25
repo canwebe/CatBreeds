@@ -1,6 +1,6 @@
-Cat Manual is an Interactive Web Application that allows users to Identify and decide before adopting pet cat breeds according to the trends and features of certain cat species and availability in the current market 
+BreedsInfo is an Interactive Web Application that allows users to Identify and decide before adopting breeds according to the trends and features of certain cat/dog species and availability in the current market 
 
-Users can Reach this Web App simply by Going to https://catmanual.netlify.app/
+Users can Reach this Web App simply by Going to https://breedsinfo.netlify.app/
 
 This Project is under progress and in future deployments users will have acces to multiple domestic pets manual's in a single application
 
