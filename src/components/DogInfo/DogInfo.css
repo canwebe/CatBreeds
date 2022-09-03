@@ -1,0 +1,123 @@
+.dogInfo {
+  display: flex;
+  justify-content: center;
+}
+
+.details {
+  width: 63%;
+}
+
+.details img {
+  height: 550px;
+  background-color: white;
+  padding: 9px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 0px rgb(194 194 194);
+}
+
+.card {
+  box-shadow: 0px 0px 8px 0px rgb(194 194 194);
+  margin: 5px 0px;
+}
+
+.breedName {
+  color: #452b2b;
+  padding: 4px;
+  background-color: rgb(184 175 175);
+  text-align: center;
+}
+
+.dogDesc {
+  padding: 11px 7px;
+  border-top: 2px solid #c73595;
+}
+
+.dogDesc p {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: #a277d6;
+  border-radius: 4px;
+  padding: 8px 14px;
+  margin: 4px 0px;
+}
+
+.dogDesc p b {
+  font-size: 17px;
+  color: #0b0b0b;
+  letter-spacing: 0.8px;
+}
+
+.data {
+  font-size: 16px;
+  color: rgb(40, 38, 38);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1135px) {
+  .details {
+    width: 66%;
+  }
+
+  .details img {
+    max-height: 600px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .details {
+    width: 74%;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .details {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .details {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .details {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .nav-link {
+    margin-top: 44px;
+  }
+
+  .nav-item {
+    font-size: 1.3rem;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .details {
+    width: 100%;
+  }
+
+  .dogCard img {
+    width: 325px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .details img {
+    height: 340px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .dogCard img {
+    width: 300px;
+  }
+}
