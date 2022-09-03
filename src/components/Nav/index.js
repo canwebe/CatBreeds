@@ -27,7 +27,7 @@ const Nav = ({ history }) => {
           activeClassName='active-link'
           className='nav-item divider'
         >
-          Cat's
+          Cats
         </NavLink>
         <NavLink
           to='/dog'
@@ -35,7 +35,7 @@ const Nav = ({ history }) => {
           activeClassName='active-link'
           className='nav-item'
         >
-          Dog's
+          Dogs
         </NavLink>
       </div>
     </nav>
