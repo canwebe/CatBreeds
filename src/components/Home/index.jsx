@@ -6,6 +6,7 @@ const Home = ({ pageNo, setPageNo }) => {
   const [image, setImage] = useState([])
   const [dataFull, setDataFull] = useState([])
   const [searchString, setSearchString] = useState('')
+  const [catFiltered, setCatFiltered] = useState()
   // const [pageNo, setPageNo] = useState(0)
 
   const handleNext = () => {
@@ -33,6 +34,14 @@ const Home = ({ pageNo, setPageNo }) => {
       .then((data) => setImage(data))
   }, [pageNo])
 
+  useEffect(() => {
+    const filterData = dataFull.filter((item) =>
+      item.name.toLowerCase().includes(searchString.trim())
+    )
+    setCatFiltered(filterData)
+    console.log("wqwq", catFiltered);
+  }, [searchString])
+
   return (
     <div className='home'>
       <div className='searchWrapper'>
@@ -56,11 +65,8 @@ const Home = ({ pageNo, setPageNo }) => {
         <h2 className='cats'>Cat's Lists</h2>
         <div className='wrapper'>
           <div className='imgWrapper'>
-            {image.length ? (
-              (searchString.length ? dataFull : image)
-                .filter((item) =>
-                  item.name.toLowerCase().includes(searchString.trim())
-                )
+            {searchString.length ? catFiltered.length > 0 ? (
+              catFiltered
                 .map(
                   (item, i) =>
                     item.image?.url && (
@@ -90,11 +96,40 @@ const Home = ({ pageNo, setPageNo }) => {
                       </Link>
                     )
                 )
-            ) : (
-              <p className='loadingImg'> Loading...</p>
+            ) : <div className='no-result'> No Result Found </div> : (
+              image
+                .map(
+                  (item, i) =>
+                    item.image?.url && (
+                      <Link
+                        to={{
+                          pathname: '/info',
+                          state: {
+                            name: item.name,
+                            desc: item.description,
+                            url: item.image.url,
+                            org: item.origin,
+                            life: item.life_span,
+                            friendly: item.dog_friendly,
+                            child_frd: item.child_friendly,
+                            Energy: item.energy_level,
+                            intell: item.intelligence,
+                            temper: item.temperament,
+                            wikepedia: item.wikipedia_url,
+                          },
+                        }}
+                        key={i}
+                      >
+                        <div className='catCard'>
+                          <img src={item.image.url} alt='catimage' />
+                          <div className='catName'>{item.name}</div>
+                        </div>
+                      </Link>
+                    )
+                )
             )}
           </div>
-          {image.length && (
+          {image.length && catFiltered.length > 0 ? (
             <div
               className={`pagination ${searchString.length && 'pageHidden'}`}
             >
@@ -108,7 +143,7 @@ const Home = ({ pageNo, setPageNo }) => {
                 Next
               </button>
             </div>
-          )}
+          ) : null }
         </div>
       </div>
     </div>

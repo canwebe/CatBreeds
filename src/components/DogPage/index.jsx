@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react'
 import './Dog.css'
 
 const DogList = ({ countPage, setCountPage }) => {
-  const [dogImages, setDogImages] = useState([])
-  const [dogData, setDogData] = useState([])
-  const [searchBreed, setSearchBreed] = useState('')
+  const [data, setData] = useState([])
+  const [searchData, setSearchData] = useState([])
+  const [inputSearch, setInputSearch] = useState('')
+  const [filtered, setFiltered] = useState()
 
   const handleNextPage = () => {
     setCountPage((prev) => prev + 1)
@@ -25,7 +26,7 @@ const DogList = ({ countPage, setCountPage }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        setDogData(data)
+        setSearchData(data)
       })
   }
 
@@ -36,9 +37,18 @@ const DogList = ({ countPage, setCountPage }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        setDogImages(data)
+        setData(data)
       })
   }, [countPage])
+
+
+  useEffect(() => {
+    const filterData = searchData.filter((item) =>
+      item.name.toLowerCase().includes(inputSearch.trim())
+    )
+    setFiltered(filterData)
+    console.log("wqwq", filterData);
+  }, [inputSearch])
 
   return (
     <div className='dogList'>
@@ -48,8 +58,8 @@ const DogList = ({ countPage, setCountPage }) => {
             <input
               name='cName'
               type='text'
-              value={searchBreed}
-              onChange={(e) => setSearchBreed(e.target.value.toLowerCase())}
+              value={inputSearch}
+              onChange={(e) => setInputSearch(e.target.value.toLowerCase())}
               onFocus={handleImageSearch}
               placeholder='Enter the Breed name...'
             />
@@ -62,11 +72,8 @@ const DogList = ({ countPage, setCountPage }) => {
         <h2 className='dog-header'>Dog's List</h2>
         <div className='dogImgWrapper'>
           <div className='dogImage '>
-            {dogImages.length ? (
-              (searchBreed.length ? dogData : dogImages)
-                .filter((item) =>
-                  item.name.toLowerCase().includes(searchBreed.trim())
-                )
+            {inputSearch.length ? filtered.length > 0 ? (
+              filtered
                 .map(
                   (item) =>
                     item.image?.url && (
@@ -93,12 +100,38 @@ const DogList = ({ countPage, setCountPage }) => {
                       </Link>
                     )
                 )
-            ) : (
-              <p className='loadingImg'>Loading...</p>
+            ) : <div className='no-result'> No Result Found </div> : (
+              data
+                .map(
+                  (item) =>
+                    item.image?.url && (
+                      <Link
+                        to={{
+                          pathname: '/doginfo',
+                          state: {
+                            name: item.name,
+                            url: item.image.url,
+                            height: item.height.metric,
+                            bred_for: item.bred_for,
+                            org: item.country_code,
+                            life: item.life_span,
+                            temper: item.temperament,
+                            weight: item.weight.metric,
+                          },
+                        }}
+                        key={item.id}
+                      >
+                        <div className='dogCard'>
+                          <img src={item.image.url} alt='dogimage' />
+                          <div className='dogName'>{item.name}</div>
+                        </div>
+                      </Link>
+                    )
+                )
             )}
           </div>
-          {dogImages.length && (
-            <div className={`pagination ${searchBreed.length && 'pageHidden'}`}>
+          {data.length && filtered.length > 0 ? (
+            <div className={`pagination ${inputSearch.length && 'pageHidden'}`}>
               <button disabled={countPage === 0} onClick={handlePrevPage}>
                 Prev
               </button>
@@ -109,7 +142,7 @@ const DogList = ({ countPage, setCountPage }) => {
                 Next
               </button>
             </div>
-          )}
+          ) : null}
         </div>
       </div>
     </div>

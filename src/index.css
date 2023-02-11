@@ -121,3 +121,11 @@ img {
   align-items: center;
   position: relative;
 }
+
+
+.no-result{
+  font-size: xx-large;
+  color: rgb(224, 62, 62);
+  font-weight: 600;
+  margin-block: 30px;
+}
